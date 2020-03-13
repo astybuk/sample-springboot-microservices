@@ -1,0 +1,1365 @@
+2020-03-13 10:54:06.095  INFO [random-generator-service,,,] 6283 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 10:54:06.674  INFO [random-generator-service,,,] 6283 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=32b1df67-2835-37d1-879d-1e05915ec300
+2020-03-13 10:54:07.131  INFO [random-generator-service,,,] 6283 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 10:54:07.141  INFO [random-generator-service,,,] 6283 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 10:54:07.142  INFO [random-generator-service,,,] 6283 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 10:54:07.216  INFO [random-generator-service,,,] 6283 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 10:54:07.216  INFO [random-generator-service,,,] 6283 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1100 ms
+2020-03-13 10:54:07.381  WARN [random-generator-service,,,] 6283 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@3ba1308d}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 10:54:07.512  WARN [random-generator-service,,,] 6283 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-03-13 10:54:07.512  INFO [random-generator-service,,,] 6283 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-13 10:54:07.516  WARN [random-generator-service,,,] 6283 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-03-13 10:54:07.517  INFO [random-generator-service,,,] 6283 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-13 10:54:07.745  INFO [random-generator-service,,,] 6283 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 10:54:08.282  INFO [random-generator-service,,,] 6283 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 10:54:08.287  INFO [random-generator-service,,,] 6283 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.977 seconds (JVM running for 4.471)
+2020-03-13 10:55:17.397  INFO [random-generator-service,,,] 6283 --- [http-nio-8200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 10:55:17.397  INFO [random-generator-service,,,] 6283 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 10:55:17.416  INFO [random-generator-service,,,] 6283 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-03-13 10:55:17.519  INFO [random-generator-service,5b8be79e7e10b11b,5746cfc3649b300f,true] 6283 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 10:55:17.522  INFO [random-generator-service,5b8be79e7e10b11b,5746cfc3649b300f,true] 6283 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 9 will be returned to random-generator-client-service
+2020-03-13 10:55:18.377  WARN [random-generator-service,,,] 6283 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@3ba1308d}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 10:55:18.386  WARN [random-generator-service,,,] 6283 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@3ba1308d}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 10:55:27.721  INFO [random-generator-service,e4e29ee654eb555f,d714edf34d5152af,true] 6283 --- [http-nio-8200-exec-2] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 10:55:27.721  INFO [random-generator-service,e4e29ee654eb555f,d714edf34d5152af,true] 6283 --- [http-nio-8200-exec-2] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 4 will be returned to random-generator-client-service
+2020-03-13 11:17:26.498  INFO [random-generator-service,2c24ac71c89a09cc,2e8f7c96a25daa14,false] 6283 --- [http-nio-8200-exec-3] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 11:17:26.498  INFO [random-generator-service,2c24ac71c89a09cc,2e8f7c96a25daa14,false] 6283 --- [http-nio-8200-exec-3] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 7 will be returned to random-generator-client-service
+2020-03-13 11:17:51.984  INFO [random-generator-service,,,] 6283 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:17:55.455  INFO [random-generator-service,,,] 7759 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:17:55.972  INFO [random-generator-service,,,] 7759 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=32b1df67-2835-37d1-879d-1e05915ec300
+2020-03-13 11:17:56.414  INFO [random-generator-service,,,] 7759 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 11:17:56.421  INFO [random-generator-service,,,] 7759 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 11:17:56.421  INFO [random-generator-service,,,] 7759 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 11:17:56.500  INFO [random-generator-service,,,] 7759 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 11:17:56.501  INFO [random-generator-service,,,] 7759 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1030 ms
+2020-03-13 11:17:56.668  WARN [random-generator-service,,,] 7759 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@661d6bb6}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 11:17:56.764  WARN [random-generator-service,,,] 7759 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-03-13 11:17:56.765  INFO [random-generator-service,,,] 7759 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-13 11:17:56.769  WARN [random-generator-service,,,] 7759 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-03-13 11:17:56.769  INFO [random-generator-service,,,] 7759 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-13 11:17:56.996  INFO [random-generator-service,,,] 7759 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:17:57.400  INFO [random-generator-service,,,] 7759 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 11:17:57.404  INFO [random-generator-service,,,] 7759 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.705 seconds (JVM running for 3.478)
+2020-03-13 11:18:16.104  INFO [random-generator-service,,,] 7759 --- [http-nio-8200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 11:18:16.106  INFO [random-generator-service,,,] 7759 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 11:18:16.132  INFO [random-generator-service,,,] 7759 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2020-03-13 11:18:16.228  INFO [random-generator-service,ade2ba103a0bdb79,d264bf84944c6e7c,true] 7759 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 11:18:16.228  INFO [random-generator-service,ade2ba103a0bdb79,d264bf84944c6e7c,true] 7759 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 6 will be returned to random-generator-client-service
+2020-03-13 11:18:16.656  WARN [random-generator-service,,,] 7759 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@661d6bb6}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 11:18:16.660  WARN [random-generator-service,,,] 7759 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@661d6bb6}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 11:20:33.159  INFO [random-generator-service,,,] 7759 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:20:39.141  INFO [random-generator-service,,,] 8242 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 8242 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:20:39.144  INFO [random-generator-service,,,] 8242 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:20:39.943  WARN [random-generator-service,,,] 8242 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'traceRestTemplateBeanPostProcessor' defined in class path resource [org/springframework/cloud/sleuth/instrument/web/client/TraceWebClientAutoConfiguration$RestTemplateConfig$TraceInterceptorConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/weaver/tools/PointcutPrimitive
+2020-03-13 11:20:39.954  INFO [random-generator-service,,,] 8242 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-13 11:20:39.963 ERROR [random-generator-service,,,] 8242 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'traceRestTemplateBeanPostProcessor' defined in class path resource [org/springframework/cloud/sleuth/instrument/web/client/TraceWebClientAutoConfiguration$RestTemplateConfig$TraceInterceptorConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/weaver/tools/PointcutPrimitive
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:240) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:722) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:535) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.spring.example.microservices.randomgeneratorservice.RandomGeneratorServiceApplication.main(RandomGeneratorServiceApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/weaver/tools/PointcutPrimitive
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 14 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/aspectj/weaver/tools/PointcutPrimitive
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.<clinit>(AspectJExpressionPointcut.java:91) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getPointcut(ReflectiveAspectJAdvisorFactory.java:210) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvisor(ReflectiveAspectJAdvisorFactory.java:192) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvisors(ReflectiveAspectJAdvisorFactory.java:126) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.BeanFactoryAspectJAdvisorsBuilder.buildAspectJAdvisors(BeanFactoryAspectJAdvisorsBuilder.java:110) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.aspectj.weaver.tools.PointcutPrimitive
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 46 common frames omitted
+
+2020-03-13 11:22:18.227  INFO [random-generator-service,,,] 8565 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 8565 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:22:18.229  INFO [random-generator-service,,,] 8565 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:22:19.259  INFO [random-generator-service,,,] 8565 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 11:22:19.266  INFO [random-generator-service,,,] 8565 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 11:22:19.266  INFO [random-generator-service,,,] 8565 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 11:22:19.320  INFO [random-generator-service,,,] 8565 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 11:22:19.320  INFO [random-generator-service,,,] 8565 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1055 ms
+2020-03-13 11:22:19.467  WARN [random-generator-service,,,] 8565 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@5489b1f7}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 11:22:19.760  INFO [random-generator-service,,,] 8565 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:22:20.069  INFO [random-generator-service,,,] 8565 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 11:22:20.073  INFO [random-generator-service,,,] 8565 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.221 seconds (JVM running for 2.942)
+2020-03-13 11:22:26.242  INFO [random-generator-service,,,] 8565 --- [http-nio-8200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 11:22:26.244  INFO [random-generator-service,,,] 8565 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 11:22:26.260  INFO [random-generator-service,,,] 8565 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-03-13 11:22:26.338  INFO [random-generator-service,fa963aea62c8d071,3a9377cddc718855,false] 8565 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 11:22:26.339  INFO [random-generator-service,fa963aea62c8d071,3a9377cddc718855,false] 8565 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 7 will be returned to random-generator-client-service
+2020-03-13 11:25:13.916  INFO [random-generator-service,,,] 8565 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:25:18.961  INFO [random-generator-service,,,] 8830 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 8830 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:25:18.965  INFO [random-generator-service,,,] 8830 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:25:19.897  WARN [random-generator-service,,,] 8830 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
+2020-03-13 11:25:19.908  INFO [random-generator-service,,,] 8830 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-13 11:25:19.915 ERROR [random-generator-service,,,] 8830 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:228) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:722) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:535) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.spring.example.microservices.randomgeneratorservice.RandomGeneratorServiceApplication.main(RandomGeneratorServiceApplication.java:10) ~[classes/:na]
+Caused by: java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
+	at org.springframework.aop.aspectj.annotation.AbstractAspectJAdvisorFactory.<clinit>(AbstractAspectJAdvisorFactory.java:62) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.initBeanFactory(AnnotationAwareAspectJAutoProxyCreator.java:82) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.setBeanFactory(AbstractAdvisorAutoProxyCreator.java:63) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1818) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1783) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 15 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.aspectj.lang.annotation.Pointcut
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 21 common frames omitted
+
+2020-03-13 11:25:50.614  INFO [random-generator-service,,,] 8948 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 8948 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:25:50.618  INFO [random-generator-service,,,] 8948 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:25:51.964  INFO [random-generator-service,,,] 8948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 11:25:51.971  INFO [random-generator-service,,,] 8948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 11:25:51.971  INFO [random-generator-service,,,] 8948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 11:25:52.020  INFO [random-generator-service,,,] 8948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 11:25:52.020  INFO [random-generator-service,,,] 8948 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1339 ms
+2020-03-13 11:25:52.160  WARN [random-generator-service,,,] 8948 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@2a8a3ada}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 11:25:52.421  INFO [random-generator-service,,,] 8948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:25:52.796  INFO [random-generator-service,,,] 8948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 11:25:52.802  INFO [random-generator-service,,,] 8948 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.647 seconds (JVM running for 3.35)
+2020-03-13 11:25:55.063  INFO [random-generator-service,,,] 8948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:26:39.221  INFO [random-generator-service,,,] 9105 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 9105 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:26:39.225  INFO [random-generator-service,,,] 9105 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:26:40.247  INFO [random-generator-service,,,] 9105 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 11:26:40.253  INFO [random-generator-service,,,] 9105 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 11:26:40.253  INFO [random-generator-service,,,] 9105 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 11:26:40.301  INFO [random-generator-service,,,] 9105 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 11:26:40.301  INFO [random-generator-service,,,] 9105 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1030 ms
+2020-03-13 11:26:40.427  WARN [random-generator-service,,,] 9105 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@839df62}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 11:26:40.671  INFO [random-generator-service,,,] 9105 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:26:40.990  INFO [random-generator-service,,,] 9105 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 11:26:40.995  INFO [random-generator-service,,,] 9105 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.207 seconds (JVM running for 2.946)
+2020-03-13 11:29:17.622  INFO [random-generator-service,,,] 9105 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:29:22.004  INFO [random-generator-service,,,] 9347 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 9347 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:29:22.008  INFO [random-generator-service,,,] 9347 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:29:23.093  INFO [random-generator-service,,,] 9347 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 11:29:23.100  INFO [random-generator-service,,,] 9347 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 11:29:23.101  INFO [random-generator-service,,,] 9347 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 11:29:23.153  INFO [random-generator-service,,,] 9347 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 11:29:23.153  INFO [random-generator-service,,,] 9347 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1101 ms
+2020-03-13 11:29:23.292  WARN [random-generator-service,,,] 9347 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@5ccb85d6}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 11:29:23.537  INFO [random-generator-service,,,] 9347 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:29:23.866  INFO [random-generator-service,,,] 9347 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 11:29:23.870  INFO [random-generator-service,,,] 9347 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.223 seconds (JVM running for 2.952)
+2020-03-13 11:31:42.651  INFO [random-generator-service,,,] 9347 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:31:45.743  INFO [random-generator-service,,,] 9641 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 9641 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 11:31:45.746  INFO [random-generator-service,,,] 9641 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 11:31:46.957  INFO [random-generator-service,,,] 9641 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 11:31:46.966  INFO [random-generator-service,,,] 9641 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 11:31:46.967  INFO [random-generator-service,,,] 9641 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 11:31:47.020  INFO [random-generator-service,,,] 9641 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 11:31:47.020  INFO [random-generator-service,,,] 9641 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1236 ms
+2020-03-13 11:31:47.177  WARN [random-generator-service,,,] 9641 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@9ab310b}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 11:31:47.436  INFO [random-generator-service,,,] 9641 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:31:47.753  INFO [random-generator-service,,,] 9641 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 11:31:47.758  INFO [random-generator-service,,,] 9641 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.409 seconds (JVM running for 3.116)
+2020-03-13 11:31:53.834  INFO [random-generator-service,,,] 9641 --- [http-nio-8200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 11:31:53.835  INFO [random-generator-service,,,] 9641 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 11:31:53.846  INFO [random-generator-service,,,] 9641 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-03-13 11:31:53.958  INFO [random-generator-service,792c39daff224abe,792c39daff224abe,true] 9641 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 11:31:53.959  INFO [random-generator-service,792c39daff224abe,792c39daff224abe,true] 9641 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 1 will be returned to random-generator-client-service
+2020-03-13 11:31:54.161  WARN [random-generator-service,,,] 9641 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@9ab310b}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 11:31:54.172  WARN [random-generator-service,,,] 9641 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@9ab310b}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 11:37:31.750  INFO [random-generator-service,e27f565b4c150a60,501d700452526b35,true] 9641 --- [http-nio-8200-exec-3] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 11:37:31.751  INFO [random-generator-service,e27f565b4c150a60,501d700452526b35,true] 9641 --- [http-nio-8200-exec-3] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 0 will be returned to random-generator-client-service
+2020-03-13 11:37:45.585  INFO [random-generator-service,13c7aa5f3c60d62e,c703b042e13dea1b,true] 9641 --- [http-nio-8200-exec-4] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 11:37:45.585  INFO [random-generator-service,13c7aa5f3c60d62e,c703b042e13dea1b,true] 9641 --- [http-nio-8200-exec-4] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 2 will be returned to random-generator-client-service
+2020-03-13 16:32:26.092  INFO [random-generator-service,07364a32b3f8fa00,08c021f65bea78a0,true] 9641 --- [http-nio-8200-exec-6] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 16:32:26.093  INFO [random-generator-service,07364a32b3f8fa00,08c021f65bea78a0,true] 9641 --- [http-nio-8200-exec-6] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 8 will be returned to random-generator-client-service
+2020-03-13 16:48:15.819  INFO [random-generator-service,b6e0201a57de7b93,d6261d1c9972d36e,true] 9641 --- [http-nio-8200-exec-8] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 16:48:15.820  INFO [random-generator-service,b6e0201a57de7b93,d6261d1c9972d36e,true] 9641 --- [http-nio-8200-exec-8] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 6 will be returned to random-generator-client-service
+2020-03-13 18:03:38.948  INFO [random-generator-service,,,] 9641 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:20:19.751  INFO [random-generator-service,,,] 10621 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 10621 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 21:20:19.787  INFO [random-generator-service,,,] 10621 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 21:20:20.811  INFO [random-generator-service,,,] 10621 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 21:20:20.818  INFO [random-generator-service,,,] 10621 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 21:20:20.819  INFO [random-generator-service,,,] 10621 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 21:20:20.872  INFO [random-generator-service,,,] 10621 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 21:20:20.872  INFO [random-generator-service,,,] 10621 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1048 ms
+2020-03-13 21:20:21.014  WARN [random-generator-service,,,] 10621 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@51bddd98}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 21:20:21.322  INFO [random-generator-service,,,] 10621 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:20:21.735  WARN [random-generator-service,,,] 10621 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.config.ConfigException: Missing required configuration "key.deserializer" which has no default value.
+2020-03-13 21:20:21.737  INFO [random-generator-service,,,] 10621 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:20:21.998  WARN [random-generator-service,,,] 10621 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@51bddd98}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 21:20:22.008  WARN [random-generator-service,,,] 10621 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@51bddd98}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 21:20:22.018  INFO [random-generator-service,,,] 10621 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-03-13 21:20:22.046  INFO [random-generator-service,,,] 10621 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-13 21:20:22.052 ERROR [random-generator-service,,,] 10621 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.config.ConfigException: Missing required configuration "key.deserializer" which has no default value.
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:894) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.spring.example.microservices.randomgeneratorservice.RandomGeneratorServiceApplication.main(RandomGeneratorServiceApplication.java:10) ~[classes/:na]
+Caused by: org.apache.kafka.common.config.ConfigException: Missing required configuration "key.deserializer" which has no default value.
+	at org.apache.kafka.common.config.ConfigDef.parseValue(ConfigDef.java:476) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.common.config.ConfigDef.parse(ConfigDef.java:466) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.common.config.AbstractConfig.<init>(AbstractConfig.java:108) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.common.config.AbstractConfig.<init>(AbstractConfig.java:129) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.ConsumerConfig.<init>(ConsumerConfig.java:548) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:629) ~[kafka-clients-2.3.1.jar:na]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:207) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumerWithAdjustedProperties(DefaultKafkaConsumerFactory.java:193) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:167) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumer(DefaultKafkaConsumerFactory.java:141) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory$$FastClassBySpringCGLIB$$3f09382f.invoke(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.instrument.messaging.SleuthKafkaAspect.wrapConsumerFactory(TraceMessagingAutoConfiguration.java:312) ~[spring-cloud-sleuth-core-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory$$EnhancerBySpringCGLIB$$d55385d2.createConsumer(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.<init>(KafkaMessageListenerContainer.java:614) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doStart(KafkaMessageListenerContainer.java:331) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:340) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:184) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:340) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:312) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:257) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 14 common frames omitted
+
+2020-03-13 21:26:40.691  INFO [random-generator-service,,,] 11155 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 11155 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 21:26:40.694  INFO [random-generator-service,,,] 11155 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 21:26:41.722  INFO [random-generator-service,,,] 11155 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 21:26:41.729  INFO [random-generator-service,,,] 11155 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 21:26:41.730  INFO [random-generator-service,,,] 11155 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 21:26:41.780  INFO [random-generator-service,,,] 11155 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 21:26:41.780  INFO [random-generator-service,,,] 11155 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1042 ms
+2020-03-13 21:26:41.917  WARN [random-generator-service,,,] 11155 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@21de60a7}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 21:26:42.250  INFO [random-generator-service,,,] 11155 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:26:42.637  INFO [random-generator-service,,,] 11155 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = []
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = random-group=id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-03-13 21:26:42.661  WARN [random-generator-service,,,] 11155 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+2020-03-13 21:26:42.663  INFO [random-generator-service,,,] 11155 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:26:42.900  WARN [random-generator-service,,,] 11155 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@21de60a7}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 21:26:42.904  WARN [random-generator-service,,,] 11155 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@21de60a7}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 21:26:42.907  INFO [random-generator-service,,,] 11155 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-03-13 21:26:42.925  INFO [random-generator-service,,,] 11155 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-13 21:26:42.929 ERROR [random-generator-service,,,] 11155 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:894) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.spring.example.microservices.randomgeneratorservice.RandomGeneratorServiceApplication.main(RandomGeneratorServiceApplication.java:10) ~[classes/:na]
+Caused by: org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:827) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:629) ~[kafka-clients-2.3.1.jar:na]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:207) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumerWithAdjustedProperties(DefaultKafkaConsumerFactory.java:193) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:167) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumer(DefaultKafkaConsumerFactory.java:141) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory$$FastClassBySpringCGLIB$$3f09382f.invoke(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.instrument.messaging.SleuthKafkaAspect.wrapConsumerFactory(TraceMessagingAutoConfiguration.java:312) ~[spring-cloud-sleuth-core-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory$$EnhancerBySpringCGLIB$$24322228.createConsumer(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.<init>(KafkaMessageListenerContainer.java:614) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doStart(KafkaMessageListenerContainer.java:331) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:340) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:184) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:340) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:312) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:257) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 14 common frames omitted
+Caused by: org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:88) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:47) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:735) ~[kafka-clients-2.3.1.jar:na]
+	... 48 common frames omitted
+
+2020-03-13 21:31:27.356  INFO [random-generator-service,,,] 11494 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 11494 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 21:31:27.358  INFO [random-generator-service,,,] 11494 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 21:31:28.431  INFO [random-generator-service,,,] 11494 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 21:31:28.438  INFO [random-generator-service,,,] 11494 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 21:31:28.438  INFO [random-generator-service,,,] 11494 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 21:31:28.489  INFO [random-generator-service,,,] 11494 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 21:31:28.490  INFO [random-generator-service,,,] 11494 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1087 ms
+2020-03-13 21:31:28.631  WARN [random-generator-service,,,] 11494 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@468e8565}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 21:31:28.938  INFO [random-generator-service,,,] 11494 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:31:29.336  INFO [random-generator-service,,,] 11494 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = random-group=id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-03-13 21:31:29.376  INFO [random-generator-service,,,] 11494 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2020-03-13 21:31:29.377  INFO [random-generator-service,,,] 11494 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2020-03-13 21:31:29.377  INFO [random-generator-service,,,] 11494 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1584124289375
+2020-03-13 21:31:29.380  INFO [random-generator-service,,,] 11494 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Subscribed to topic(s): RANDOM.TOPIC
+2020-03-13 21:31:29.381  INFO [random-generator-service,,,] 11494 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-03-13 21:31:29.412  INFO [random-generator-service,,,] 11494 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 21:31:29.416  INFO [random-generator-service,,,] 11494 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.451 seconds (JVM running for 3.133)
+2020-03-13 21:31:29.499  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-1, groupId=random-group=id] Cluster ID: pdKau5amRUmDK4j8QgAOgg
+2020-03-13 21:31:29.501  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:31:29.503  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Revoking previously assigned partitions []
+2020-03-13 21:31:29.503  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions revoked: []
+2020-03-13 21:31:29.504  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:31:29.521  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:31:29.619  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Successfully joined group with generation 1
+2020-03-13 21:31:29.625  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting newly assigned partitions: RANDOM.TOPIC-0
+2020-03-13 21:31:29.646  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Found no committed offset for partition RANDOM.TOPIC-0
+2020-03-13 21:31:29.667  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-1, groupId=random-group=id] Resetting offset for partition RANDOM.TOPIC-0 to offset 3.
+2020-03-13 21:31:29.684  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions assigned: [RANDOM.TOPIC-0]
+2020-03-13 21:32:33.866  WARN [random-generator-service,,,] 11494 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@468e8565}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 21:32:33.887  WARN [random-generator-service,,,] 11494 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@468e8565}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 21:32:33.923 ERROR [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.s.kafka.listener.LoggingErrorHandler   : Error while processing: ConsumerRecord(topic = RANDOM.TOPIC, partition = 0, leaderEpoch = 0, offset = 3, CreateTime = 1584124347130, serialized key size = -1, serialized value size = 77, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = {"requestServiceName":"random-generator-client-service","randomThreshold":10})
+
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void org.spring.example.microservices.randomgeneratorservice.services.kakfka.impl.KafkaConsumerServiceImpl.consumeRandomNumberGenerationEvent(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.spring.example.microservices.randomgeneratorservice.dtos.requests.GenerateRandomSyncRequest` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (String)"{"requestServiceName":"random-generator-client-service","randomThreshold":10}"; line: 1, column: 2]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.spring.example.microservices.randomgeneratorservice.dtos.requests.GenerateRandomSyncRequest` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (String)"{"requestServiceName":"random-generator-client-service","randomThreshold":10}"; line: 1, column: 2]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:1780) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:1772) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1685) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:1611) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:1516) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1258) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1007) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:927) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.spring.example.microservices.randomgeneratorservice.dtos.requests.GenerateRandomSyncRequest` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (String)"{"requestServiceName":"random-generator-client-service","randomThreshold":10}"; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1589) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1055) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1297) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4202) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3205) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3173) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at org.spring.example.microservices.randomgeneratorservice.services.kakfka.impl.KafkaConsumerServiceImpl.consumeRandomNumberGenerationEvent(KafkaConsumerServiceImpl.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:48) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:327) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:86) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:51) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$FastClassBySpringCGLIB$$cde8c01d.invoke(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.instrument.messaging.MessageListenerMethodInterceptor.invoke(TraceMessagingAutoConfiguration.java:389) ~[spring-cloud-sleuth-core-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$EnhancerBySpringCGLIB$$b79623f9.onMessage(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:1734) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:1717) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1672) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 21:33:19.608 ERROR [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.s.kafka.listener.LoggingErrorHandler   : Error while processing: ConsumerRecord(topic = RANDOM.TOPIC, partition = 0, leaderEpoch = 0, offset = 4, CreateTime = 1584124399598, serialized key size = -1, serialized value size = 77, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = {"requestServiceName":"random-generator-client-service","randomThreshold":10})
+
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void org.spring.example.microservices.randomgeneratorservice.services.kakfka.impl.KafkaConsumerServiceImpl.consumeRandomNumberGenerationEvent(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.spring.example.microservices.randomgeneratorservice.dtos.requests.GenerateRandomSyncRequest` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (String)"{"requestServiceName":"random-generator-client-service","randomThreshold":10}"; line: 1, column: 2]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.spring.example.microservices.randomgeneratorservice.dtos.requests.GenerateRandomSyncRequest` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (String)"{"requestServiceName":"random-generator-client-service","randomThreshold":10}"; line: 1, column: 2]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:1780) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:1772) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1685) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:1611) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:1516) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1258) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1007) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:927) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.spring.example.microservices.randomgeneratorservice.dtos.requests.GenerateRandomSyncRequest` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (String)"{"requestServiceName":"random-generator-client-service","randomThreshold":10}"; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1589) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1055) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1297) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4202) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3205) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3173) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at org.spring.example.microservices.randomgeneratorservice.services.kakfka.impl.KafkaConsumerServiceImpl.consumeRandomNumberGenerationEvent(KafkaConsumerServiceImpl.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:48) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:327) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:86) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:51) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$FastClassBySpringCGLIB$$cde8c01d.invoke(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.instrument.messaging.MessageListenerMethodInterceptor.invoke(TraceMessagingAutoConfiguration.java:389) ~[spring-cloud-sleuth-core-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$EnhancerBySpringCGLIB$$b79623f9.onMessage(<generated>) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:1734) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:1717) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1672) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 21:33:50.234  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Member consumer-1-7db529b6-cab7-44eb-acbd-91b77609f32a sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:33:50.236  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Unsubscribed all topics or patterns and assigned partitions
+2020-03-13 21:33:50.236  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2020-03-13 21:33:50.256  INFO [random-generator-service,,,] 11494 --- [random-group=id-0-C-1] essageListenerContainer$ListenerConsumer : random-group=id: Consumer stopped
+2020-03-13 21:33:50.260  INFO [random-generator-service,,,] 11494 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:33:54.209  INFO [random-generator-service,,,] 11809 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 11809 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 21:33:54.212  INFO [random-generator-service,,,] 11809 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 21:33:55.278  INFO [random-generator-service,,,] 11809 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 21:33:55.284  INFO [random-generator-service,,,] 11809 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 21:33:55.285  INFO [random-generator-service,,,] 11809 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 21:33:55.331  INFO [random-generator-service,,,] 11809 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 21:33:55.332  INFO [random-generator-service,,,] 11809 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1076 ms
+2020-03-13 21:33:55.469  WARN [random-generator-service,,,] 11809 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@5ae15}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 21:33:55.763  INFO [random-generator-service,,,] 11809 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 21:33:56.202  INFO [random-generator-service,,,] 11809 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = random-group=id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-03-13 21:33:56.238  INFO [random-generator-service,,,] 11809 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2020-03-13 21:33:56.239  INFO [random-generator-service,,,] 11809 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2020-03-13 21:33:56.240  INFO [random-generator-service,,,] 11809 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1584124436237
+2020-03-13 21:33:56.244  INFO [random-generator-service,,,] 11809 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Subscribed to topic(s): RANDOM.TOPIC
+2020-03-13 21:33:56.245  INFO [random-generator-service,,,] 11809 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-03-13 21:33:56.307  INFO [random-generator-service,,,] 11809 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 21:33:56.311  INFO [random-generator-service,,,] 11809 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.475 seconds (JVM running for 3.193)
+2020-03-13 21:33:56.401  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-1, groupId=random-group=id] Cluster ID: pdKau5amRUmDK4j8QgAOgg
+2020-03-13 21:33:56.402  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:33:56.404  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Revoking previously assigned partitions []
+2020-03-13 21:33:56.405  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions revoked: []
+2020-03-13 21:33:56.405  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:33:56.415  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:33:56.425  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Successfully joined group with generation 3
+2020-03-13 21:33:56.429  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting newly assigned partitions: RANDOM.TOPIC-0
+2020-03-13 21:33:56.438  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting offset for partition RANDOM.TOPIC-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-03-13 21:33:56.445  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions assigned: [RANDOM.TOPIC-0]
+2020-03-13 21:34:17.353  INFO [random-generator-service,,,] 11809 --- [kafka-coordinator-heartbeat-thread | random-group=id] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null) is unavailable or invalid, will attempt rediscovery
+2020-03-13 21:34:17.350  INFO [random-generator-service,28418ceaedd236dc,9015fa07b868b42a,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 21:34:17.354  INFO [random-generator-service,28418ceaedd236dc,9015fa07b868b42a,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 0 will be returned to random-generator-client-service
+2020-03-13 21:34:17.354  INFO [random-generator-service,28418ceaedd236dc,9015fa07b868b42a,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.k.i.KafkaConsumerServiceImpl : Received message from kafka: {}
+2020-03-13 21:34:17.357  WARN [random-generator-service,,,] 11809 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@5ae15}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 21:34:17.361  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:34:17.361  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null) is unavailable or invalid, will attempt rediscovery
+2020-03-13 21:34:17.363  WARN [random-generator-service,,,] 11809 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@5ae15}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 21:34:17.466  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:34:17.472  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Attempt to heartbeat failed for since member id consumer-1-039b23aa-21b3-4b85-9b01-4da65c6dd15f is not valid.
+2020-03-13 21:34:17.474 ERROR [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Offset commit failed on partition RANDOM.TOPIC-0 at offset 6: The coordinator is not aware of this member.
+2020-03-13 21:34:17.481 ERROR [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.kafka.listener.LoggingErrorHandler   : Error while processing: null
+
+org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitResponseHandler.handle(ConsumerCoordinator.java:900) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitResponseHandler.handle(ConsumerCoordinator.java:840) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:978) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:958) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture$1.onSuccess(RequestFuture.java:204) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.fireSuccess(RequestFuture.java:167) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.complete(RequestFuture.java:127) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$RequestFutureCompletionHandler.fireCompletion(ConsumerNetworkClient.java:578) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.firePendingCompletedRequests(ConsumerNetworkClient.java:388) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:294) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:233) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:212) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.commitOffsetsSync(ConsumerCoordinator.java:693) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.commitSync(KafkaConsumer.java:1454) ~[kafka-clients-2.3.1.jar:na]
+	at brave.kafka.clients.TracingConsumer.commitSync(TracingConsumer.java:182) ~[brave-instrumentation-kafka-clients-5.10.1.jar:na]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.commitIfNecessary(KafkaMessageListenerContainer.java:2032) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.processCommits(KafkaMessageListenerContainer.java:1855) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:981) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:927) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-03-13 21:34:17.482  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Revoking previously assigned partitions [RANDOM.TOPIC-0]
+2020-03-13 21:34:17.482  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions revoked: [RANDOM.TOPIC-0]
+2020-03-13 21:34:17.482  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:34:17.484  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:34:17.492  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Successfully joined group with generation 5
+2020-03-13 21:34:17.493  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting newly assigned partitions: RANDOM.TOPIC-0
+2020-03-13 21:34:17.497  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting offset for partition RANDOM.TOPIC-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-03-13 21:34:17.502  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions assigned: [RANDOM.TOPIC-0]
+2020-03-13 21:34:37.379  INFO [random-generator-service,,,] 11809 --- [kafka-coordinator-heartbeat-thread | random-group=id] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null) is unavailable or invalid, will attempt rediscovery
+2020-03-13 21:34:37.379  INFO [random-generator-service,28418ceaedd236dc,3e3b014fa1e64c84,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 21:34:37.379  INFO [random-generator-service,28418ceaedd236dc,3e3b014fa1e64c84,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 4 will be returned to random-generator-client-service
+2020-03-13 21:34:37.379  INFO [random-generator-service,28418ceaedd236dc,3e3b014fa1e64c84,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.k.i.KafkaConsumerServiceImpl : Received message from kafka: {}
+2020-03-13 21:34:37.382  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:34:37.382  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null) is unavailable or invalid, will attempt rediscovery
+2020-03-13 21:34:37.488  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 21:34:37.497  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Attempt to heartbeat failed for since member id consumer-1-712942a8-3483-4a25-85b3-26e82cd1f006 is not valid.
+2020-03-13 21:34:37.499 ERROR [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Offset commit failed on partition RANDOM.TOPIC-0 at offset 6: The coordinator is not aware of this member.
+2020-03-13 21:34:37.500 ERROR [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.kafka.listener.LoggingErrorHandler   : Error while processing: null
+
+org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitResponseHandler.handle(ConsumerCoordinator.java:900) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator$OffsetCommitResponseHandler.handle(ConsumerCoordinator.java:840) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:978) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:958) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture$1.onSuccess(RequestFuture.java:204) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.fireSuccess(RequestFuture.java:167) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.complete(RequestFuture.java:127) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$RequestFutureCompletionHandler.fireCompletion(ConsumerNetworkClient.java:578) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.firePendingCompletedRequests(ConsumerNetworkClient.java:388) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:294) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:233) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:212) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.commitOffsetsSync(ConsumerCoordinator.java:693) ~[kafka-clients-2.3.1.jar:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.commitSync(KafkaConsumer.java:1454) ~[kafka-clients-2.3.1.jar:na]
+	at brave.kafka.clients.TracingConsumer.commitSync(TracingConsumer.java:182) ~[brave-instrumentation-kafka-clients-5.10.1.jar:na]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.commitIfNecessary(KafkaMessageListenerContainer.java:2032) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.processCommits(KafkaMessageListenerContainer.java:1855) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:981) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:927) ~[spring-kafka-2.4.4.RELEASE.jar:2.4.4.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-03-13 21:34:37.502  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Revoking previously assigned partitions [RANDOM.TOPIC-0]
+2020-03-13 21:34:37.503  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions revoked: [RANDOM.TOPIC-0]
+2020-03-13 21:34:37.504  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:34:37.508  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 21:34:37.521  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Successfully joined group with generation 7
+2020-03-13 21:34:37.522  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting newly assigned partitions: RANDOM.TOPIC-0
+2020-03-13 21:34:37.524  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting offset for partition RANDOM.TOPIC-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-03-13 21:34:37.529  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions assigned: [RANDOM.TOPIC-0]
+2020-03-13 21:34:37.533  INFO [random-generator-service,28418ceaedd236dc,99ab96ed5e58da03,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 21:34:37.533  INFO [random-generator-service,28418ceaedd236dc,99ab96ed5e58da03,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 4 will be returned to random-generator-client-service
+2020-03-13 21:34:37.533  INFO [random-generator-service,28418ceaedd236dc,99ab96ed5e58da03,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.k.i.KafkaConsumerServiceImpl : Received message from kafka: {}
+2020-03-13 21:34:37.535  INFO [random-generator-service,347300e48b1b8736,063ca227596534b0,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 21:34:37.535  INFO [random-generator-service,347300e48b1b8736,063ca227596534b0,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 0 will be returned to random-generator-client-service
+2020-03-13 21:34:37.535  INFO [random-generator-service,347300e48b1b8736,063ca227596534b0,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.k.i.KafkaConsumerServiceImpl : Received message from kafka: {}
+2020-03-13 21:34:49.790  INFO [random-generator-service,2e6c1cc1d69e1543,c79826dcbd739739,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 21:34:49.790  INFO [random-generator-service,2e6c1cc1d69e1543,c79826dcbd739739,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 6 will be returned to random-generator-client-service
+2020-03-13 21:34:49.791  INFO [random-generator-service,2e6c1cc1d69e1543,c79826dcbd739739,true] 11809 --- [random-group=id-0-C-1] o.s.e.m.r.s.k.i.KafkaConsumerServiceImpl : Received message from kafka: {}
+2020-03-13 22:24:30.993  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Member consumer-1-40a7d615-d53b-48f4-8c33-95fc3069ecb2 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 22:24:30.994  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Unsubscribed all topics or patterns and assigned partitions
+2020-03-13 22:24:30.994  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2020-03-13 22:24:31.002  INFO [random-generator-service,,,] 11809 --- [random-group=id-0-C-1] essageListenerContainer$ListenerConsumer : random-group=id: Consumer stopped
+2020-03-13 22:24:31.005  INFO [random-generator-service,,,] 11809 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:43:32.557  INFO [random-generator-service,,,] 14174 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 14174 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 22:43:32.559  INFO [random-generator-service,,,] 14174 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 22:43:33.738  INFO [random-generator-service,,,] 14174 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 22:43:33.748  INFO [random-generator-service,,,] 14174 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 22:43:33.749  INFO [random-generator-service,,,] 14174 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 22:43:33.799  INFO [random-generator-service,,,] 14174 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 22:43:33.799  INFO [random-generator-service,,,] 14174 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1193 ms
+2020-03-13 22:43:33.938  WARN [random-generator-service,,,] 14174 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@115ca7de}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 22:43:34.235  INFO [random-generator-service,,,] 14174 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:43:34.653  INFO [random-generator-service,,,] 14174 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = random-group=id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-03-13 22:43:34.690  INFO [random-generator-service,,,] 14174 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2020-03-13 22:43:34.691  INFO [random-generator-service,,,] 14174 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2020-03-13 22:43:34.691  INFO [random-generator-service,,,] 14174 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1584128614689
+2020-03-13 22:43:34.694  INFO [random-generator-service,,,] 14174 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Subscribed to topic(s): RANDOM.TOPIC
+2020-03-13 22:43:34.695  INFO [random-generator-service,,,] 14174 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-03-13 22:43:34.728  INFO [random-generator-service,,,] 14174 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 22:43:34.740  INFO [random-generator-service,,,] 14174 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.564 seconds (JVM running for 3.25)
+2020-03-13 22:43:34.809  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-1, groupId=random-group=id] Cluster ID: pdKau5amRUmDK4j8QgAOgg
+2020-03-13 22:43:34.810  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 22:43:34.813  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Revoking previously assigned partitions []
+2020-03-13 22:43:34.813  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions revoked: []
+2020-03-13 22:43:34.813  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 22:43:34.823  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 22:43:34.833  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Successfully joined group with generation 9
+2020-03-13 22:43:34.837  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting newly assigned partitions: RANDOM.TOPIC-0
+2020-03-13 22:43:34.844  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting offset for partition RANDOM.TOPIC-0 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-03-13 22:43:34.850  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions assigned: [RANDOM.TOPIC-0]
+2020-03-13 22:45:29.243  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Member consumer-1-b8afdebe-4996-4cc1-8c43-af37997419d5 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 22:45:29.244  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Unsubscribed all topics or patterns and assigned partitions
+2020-03-13 22:45:29.244  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2020-03-13 22:45:29.250  INFO [random-generator-service,,,] 14174 --- [random-group=id-0-C-1] essageListenerContainer$ListenerConsumer : random-group=id: Consumer stopped
+2020-03-13 22:45:29.253  INFO [random-generator-service,,,] 14174 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:45:32.230  INFO [random-generator-service,,,] 14497 --- [main] .e.m.r.RandomGeneratorServiceApplication : Starting RandomGeneratorServiceApplication on NBOOK086 with PID 14497 (/home/itrex/Documents/Microservices/sample-random-generator-service/target/classes started by itrex in /home/itrex/Documents/Microservices/sample-random-generator-service)
+2020-03-13 22:45:32.233  INFO [random-generator-service,,,] 14497 --- [main] .e.m.r.RandomGeneratorServiceApplication : No active profile set, falling back to default profiles: default
+2020-03-13 22:45:33.247  INFO [random-generator-service,,,] 14497 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8200 (http)
+2020-03-13 22:45:33.254  INFO [random-generator-service,,,] 14497 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 22:45:33.255  INFO [random-generator-service,,,] 14497 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 22:45:33.311  INFO [random-generator-service,,,] 14497 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 22:45:33.312  INFO [random-generator-service,,,] 14497 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1041 ms
+2020-03-13 22:45:33.454  WARN [random-generator-service,,,] 14497 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@33e434c8}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-03-13 22:45:33.767  INFO [random-generator-service,,,] 14497 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:45:34.173  INFO [random-generator-service,,,] 14497 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = random-group=id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-03-13 22:45:34.208  INFO [random-generator-service,,,] 14497 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2020-03-13 22:45:34.209  INFO [random-generator-service,,,] 14497 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2020-03-13 22:45:34.209  INFO [random-generator-service,,,] 14497 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1584128734208
+2020-03-13 22:45:34.212  INFO [random-generator-service,,,] 14497 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=random-group=id] Subscribed to topic(s): RANDOM.TOPIC
+2020-03-13 22:45:34.213  INFO [random-generator-service,,,] 14497 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-03-13 22:45:34.251  INFO [random-generator-service,,,] 14497 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8200 (http) with context path ''
+2020-03-13 22:45:34.267  INFO [random-generator-service,,,] 14497 --- [main] .e.m.r.RandomGeneratorServiceApplication : Started RandomGeneratorServiceApplication in 2.435 seconds (JVM running for 3.092)
+2020-03-13 22:45:34.330  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-1, groupId=random-group=id] Cluster ID: pdKau5amRUmDK4j8QgAOgg
+2020-03-13 22:45:34.331  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-03-13 22:45:34.333  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Revoking previously assigned partitions []
+2020-03-13 22:45:34.334  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions revoked: []
+2020-03-13 22:45:34.334  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 22:45:34.341  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] (Re-)joining group
+2020-03-13 22:45:34.349  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Successfully joined group with generation 11
+2020-03-13 22:45:34.351  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting newly assigned partitions: RANDOM.TOPIC-0
+2020-03-13 22:45:34.357  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=random-group=id] Setting offset for partition RANDOM.TOPIC-0 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-03-13 22:45:34.363  INFO [random-generator-service,,,] 14497 --- [random-group=id-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : random-group=id: partitions assigned: [RANDOM.TOPIC-0]
+2020-03-13 22:45:54.174  INFO [random-generator-service,,,] 14497 --- [http-nio-8200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 22:45:54.174  INFO [random-generator-service,,,] 14497 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 22:45:54.208  INFO [random-generator-service,,,] 14497 --- [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 33 ms
+2020-03-13 22:45:54.271  INFO [random-generator-service,9c93d7dc4fbaa54b,de94374120c5c24b,true] 14497 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 22:45:54.272  INFO [random-generator-service,9c93d7dc4fbaa54b,de94374120c5c24b,true] 14497 --- [http-nio-8200-exec-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 4 will be returned to random-generator-client-service
+2020-03-13 22:45:54.438  WARN [random-generator-service,,,] 14497 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@33e434c8}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-03-13 22:45:54.440  WARN [random-generator-service,,,] 14497 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@33e434c8}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:284) ~[zipkin-reporter-2.12.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:358) ~[zipkin-reporter-2.12.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[na:na]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 9 common frames omitted
+
+2020-03-13 22:46:10.379  INFO [random-generator-service,c79b9122b01d021e,44326d1bfcedff4a,true] 14497 --- [http-nio-8200-exec-2] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 22:46:10.380  INFO [random-generator-service,c79b9122b01d021e,44326d1bfcedff4a,true] 14497 --- [http-nio-8200-exec-2] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 9 will be returned to random-generator-client-service
+2020-03-13 22:46:35.577  INFO [random-generator-service,51d12a65562dbbd5,0cc0127ec81a6250,true] 14497 --- [http-nio-8200-exec-3] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 22:46:35.577  INFO [random-generator-service,51d12a65562dbbd5,0cc0127ec81a6250,true] 14497 --- [http-nio-8200-exec-3] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 7 will be returned to random-generator-client-service
+2020-03-13 22:46:58.217  INFO [random-generator-service,b4fbdb63b262a834,966dc59553e391eb,true] 14497 --- [http-nio-8200-exec-4] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 22:46:58.217  INFO [random-generator-service,b4fbdb63b262a834,966dc59553e391eb,true] 14497 --- [http-nio-8200-exec-4] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 3 will be returned to random-generator-client-service
+2020-03-13 22:47:17.044  INFO [random-generator-service,6fb5456c41aecd23,0c2c1e88916cdf15,true] 14497 --- [http-nio-8200-exec-5] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 22:47:17.044  INFO [random-generator-service,6fb5456c41aecd23,0c2c1e88916cdf15,true] 14497 --- [http-nio-8200-exec-5] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 8 will be returned to random-generator-client-service
+2020-03-13 22:47:38.757  INFO [random-generator-service,cdcd1e656b1f1fd7,dd8dc02883125ec9,true] 14497 --- [random-group=id-0-C-1] o.s.e.m.r.s.k.i.KafkaConsumerServiceImpl : Received message from kafka...
+2020-03-13 22:47:38.760  INFO [random-generator-service,cdcd1e656b1f1fd7,dd8dc02883125ec9,true] 14497 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Request received from random-generator-client-service. Random number threshold: 10
+2020-03-13 22:47:38.760  INFO [random-generator-service,cdcd1e656b1f1fd7,dd8dc02883125ec9,true] 14497 --- [random-group=id-0-C-1] o.s.e.m.r.s.i.RandomGeneratorServiceImpl : Generated value: 5 will be returned to random-generator-client-service
